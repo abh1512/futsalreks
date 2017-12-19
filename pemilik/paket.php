@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <?php
-session_start();
-include '../conn/konek.php';
+include '../lib/settings.php';
 $id_pemilik = $_SESSION['id_pengguna'];
-$pemilik = mysqli_query($koneksi,"SELECT * FROM pemiliks WHERE no_ktp='$id_pemilik'");
+$pemilik = mysqli_query($con,"SELECT * FROM pemiliks WHERE no_ktp='$id_pemilik'");
   while($row = mysqli_fetch_array($pemilik))
 {
 ?>

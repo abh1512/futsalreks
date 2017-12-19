@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <?php
-session_start();
-include '../conn/konek.php';
+include '../lib/settings.php';
 $id_pemilik = $_SESSION['id_pengguna'];
-$pemilik = mysqli_query($koneksi,"SELECT * FROM pemiliks WHERE no_ktp='$id_pemilik'");
+$pemilik = mysqli_query($con,"SELECT * FROM pemiliks WHERE no_ktp='$id_pemilik'");
   while($row = mysqli_fetch_array($pemilik))
 {
 ?>
@@ -594,13 +593,13 @@ $pemilik = mysqli_query($koneksi,"SELECT * FROM pemiliks WHERE no_ktp='$id_pemil
 
                                                 </div>
 												<div>
-													
+
 												</div>
 
                                           </div>
                                       </div>
                                       </div>
-									  
+
                                   </div>
                     <div class="col s12 m6 l6">
                       <div class="card">
@@ -647,7 +646,7 @@ $pemilik = mysqli_query($koneksi,"SELECT * FROM pemiliks WHERE no_ktp='$id_pemil
 														<div class="card-image waves-effect waves-block waves-light">
 															<img class="activator" src="assets/images/card-image2.jpg" alt="">
 														</div>
-														
+
 														<div class="card-reveal">
 															<span class="card-title">Card Title<i class="material-icons right">close</i></span>
 															<p>Here is some more information about this product that is only revealed once clicked on.</p>
@@ -657,7 +656,7 @@ $pemilik = mysqli_query($koneksi,"SELECT * FROM pemiliks WHERE no_ktp='$id_pemil
 														<div class="card-image waves-effect waves-block waves-light">
 															<img class="activator" src="assets/images/card-image2.jpg" alt="">
 														</div>
-														
+
 														<div class="card-reveal">
 															<span class="card-title">Card Title<i class="material-icons right">close</i></span>
 															<p>Here is some more information about this product that is only revealed once clicked on.</p>
@@ -669,25 +668,25 @@ $pemilik = mysqli_query($koneksi,"SELECT * FROM pemiliks WHERE no_ktp='$id_pemil
 														<div class="card-image waves-effect waves-block waves-light">
 															<img class="activator" src="assets/images/card-image2.jpg" alt="">
 														</div>
-														
-														<div class="card-reveal">
-															<span class="card-title">Card Title<i class="material-icons right">close</i></span>
-															<p>Here is some more information about this product that is only revealed once clicked on.</p>
-														</div>
-													</div>
-													
-													<div class="card col s4">
-														<div class="card-image waves-effect waves-block waves-light">
-															<img class="activator" src="assets/images/card-image2.jpg" alt="">
-														</div>
-														
+
 														<div class="card-reveal">
 															<span class="card-title">Card Title<i class="material-icons right">close</i></span>
 															<p>Here is some more information about this product that is only revealed once clicked on.</p>
 														</div>
 													</div>
 
-                                                    
+													<div class="card col s4">
+														<div class="card-image waves-effect waves-block waves-light">
+															<img class="activator" src="assets/images/card-image2.jpg" alt="">
+														</div>
+
+														<div class="card-reveal">
+															<span class="card-title">Card Title<i class="material-icons right">close</i></span>
+															<p>Here is some more information about this product that is only revealed once clicked on.</p>
+														</div>
+													</div>
+
+
 
                                                 </div>
 
