@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2017 at 02:40 AM
+-- Generation Time: Dec 19, 2017 at 06:09 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -111,16 +111,15 @@ CREATE TABLE `detil_lapangans` (
 --
 
 INSERT INTO `detil_lapangans` (`id_detil_lapangan`, `id_lap`, `jam_mulai`, `jam_berakhir`, `harga`) VALUES
-(9, '72487362870011', '05:00:00', '06:00:00', 12),
-(10, '72487362870011', '06:00:00', '07:00:00', 12),
-(11, '72487362870011', '07:00:00', '08:00:00', 12),
-(12, '72487362870011', '08:00:00', '09:00:00', 12),
-(13, '72487362870011', '09:00:00', '10:00:00', 12),
-(14, '72487362870011', '05:00:00', '06:00:00', 122),
-(15, '72487362870011', '06:00:00', '07:00:00', 122),
-(16, '72487362870011', '07:00:00', '08:00:00', 122),
-(17, '72487362870011', '08:00:00', '09:00:00', 122),
-(18, '72487362870011', '09:00:00', '10:00:00', 122);
+(19, '72487362870011', '07:00:00', '08:00:00', 50000),
+(20, '72487362870011', '08:00:00', '09:00:00', 50000),
+(21, '72487362870011', '09:00:00', '10:00:00', 50000),
+(22, '72487362870011', '10:00:00', '11:00:00', 50000),
+(23, '72487362870011', '11:00:00', '12:00:00', 50000),
+(24, '72487362870011', '12:00:00', '13:00:00', 50000),
+(25, '72487362870011', '13:00:00', '14:00:00', 50000),
+(26, '72487362870011', '14:00:00', '15:00:00', 50000),
+(27, '72487362870011', '15:00:00', '16:00:00', 50000);
 
 -- --------------------------------------------------------
 
@@ -205,6 +204,7 @@ CREATE TABLE `lapangans` (
   `id_lapangan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_gedung` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kategori` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -213,13 +213,10 @@ CREATE TABLE `lapangans` (
 -- Dumping data for table `lapangans`
 --
 
-INSERT INTO `lapangans` (`id_lapangan`, `id_gedung`, `nama`, `created_at`, `updated_at`) VALUES
-('72487362870011', '7248736287001', 'LAP 1', NULL, NULL),
-('72487362870012', '7248736287001', 'LAP 2', NULL, NULL),
-('72487362870013', '7248736287001', 'LAP 3', NULL, NULL),
-('72487362870014', '7248736287001', 'LAP 4', NULL, NULL),
-('72487362870015', '7248736287001', 'LAP 5', NULL, NULL),
-('72487362870016', '7248736287001', 'LAP 6', NULL, NULL);
+INSERT INTO `lapangans` (`id_lapangan`, `id_gedung`, `nama`, `kategori`, `created_at`, `updated_at`) VALUES
+('72487362870011', '7248736287001', 'LAP 1', 'sintetis', NULL, NULL),
+('72487362870012', '7248736287001', 'LAP 2', 'matras', NULL, NULL),
+('72487362870013', '7248736287001', 'LAP 3', 'plester', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -588,7 +585,7 @@ ALTER TABLE `carousels`
 -- AUTO_INCREMENT for table `detil_lapangans`
 --
 ALTER TABLE `detil_lapangans`
-  MODIFY `id_detil_lapangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_detil_lapangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `detil_transaksis`
