@@ -4,6 +4,7 @@ require_once "../lib/function.php";
 
 if($_POST['key'] == "lapangan")
 {
+  $kategori = anti_sql_injection($con,$_POST['kategori']);
   $no_ktp = $_SESSION['id_pengguna'];
   $query = mysqli_query($con,"SELECT id_gedung FROM pegawais WHERE no_ktp='$no_ktp'");
   $arr = mysqli_fetch_array($query);
@@ -15,7 +16,7 @@ if($_POST['key'] == "lapangan")
   $id_lap = $id_ged.$index;
 
   $nama = "LAP ".$index;
-  if(mliInsert($con,"lapangans","id_lapangan, id_gedung, nama","'$id_lap', '$id_ged', '$nama'")){
+  if(mliInsert($con,"lapangans","id_lapangan, id_gedung, nama , kategori","'$id_lap', '$id_ged', '$nama', '$kategori'")){
     echo "ok";
   }
   else

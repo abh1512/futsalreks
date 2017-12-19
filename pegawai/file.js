@@ -3,7 +3,7 @@ function tambah(){
   $.ajax({
       url : "submit.php",
       type: "post",
-      data: "key=lapangan",
+      data: $("#category").serialize()+"&key=lapangan",
       success:function(data){
       if(data == "ok"){
           swal({
