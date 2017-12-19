@@ -65,6 +65,35 @@
 		</div>
 	</div>
 
+  <!--Modal 2-->
+  <div id="modal2" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Edit Detil Harga </h4>
+      <div class="row">
+      <form id="edit_harga" class="col s12" action="#">
+        <div readonly class="input-field col s6">
+              <input id="mulai" name="mulai" type="text">
+              <label class="active" for="mulai">Jam Mulai</label>
+          </div>
+          <div readonly class="input-field col s6">
+                <input id="selesai" type="text">
+                <label class="active" for="selesai">Jam Selesai</label>
+            </div>
+            <div class="input-field col s6">
+                  <input id="harga" name="harga" type="text">
+                  <label class="active" for="harga">Harga</label>
+              </div>
+      </form>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-green btn-flat" onclick="tambah();" id="<?=$data2->id_gedung?>">Simpan</a>
+    <a class=" modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
+
+    </div>
+  </div>
+
       <div class="col s12">
           <p>Detil Harga</p>
 				<div class="card">
@@ -78,14 +107,14 @@
 											<!--<th>Jam Mulai</th>
 											<th>Jam Selesai</th>-->
 											<th>Harga</th>
-											<th>Aksi</th>
+											<th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <?php
                       $no=1;
-                        $query = mysqli_query($con,"SELECT jam_mulai, jam_berakhir, harga FROM detil_lapangans WHERE id_lap='$id_lap'");
+                        $query = mysqli_query($con,"SELECT jam_mulai, jam_berakhir, harga , id_detil_lapangan FROM detil_lapangans WHERE id_lap='$id_lap'");
                         while($row=mysqli_fetch_array($query)){
 
                         //  $jam1 = substr($r->jam_lapangan, 0,5);
@@ -98,7 +127,7 @@
                             <!--<td><input type="hidden" name='prodi' value=""></td>
                             <td><input type="hidden" name='status' value=""></td>-->
                             <td><input type="hidden" name='nama' value="<?=$row[2]?>"><?=$row[2]?></td>
-                            <td><a class="small material-icons" href="#">edit</a><a class="small material-icons" href="#">delete</a></td>
+                            <td><a class="small material-icons modal-trigger" onclick="edit('<?=$row[3]?>')" href="#modal2">edit</a></td>
                           </tr>
                         <?php $no++;}?>
                   </tr>
@@ -114,5 +143,8 @@
 //load setelah jquery telah diload di index.php
   $loadAfterJQuery='
   <script src="../assets/js/pages/form_elements.js"></script>
-  <script src="file.js"></script>';
+  <script src="file.js"></script>
+  <script>
+
+  </script>';
   ?>

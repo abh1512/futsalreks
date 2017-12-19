@@ -84,3 +84,11 @@ else {
 
 
 }
+else if($_GET['key'] == "edit")
+{
+    $id_detail = $_GET['kode'];
+    $query = "SELECT * FROM detil_lapangans WHERE id_detil_lapangan = '$id_detail' ";
+    $sql = mysqli_query($con, $query);
+    $data = mysqli_fetch_array($sql);
+    echo json_encode($data);
+}
