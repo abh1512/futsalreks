@@ -3,7 +3,7 @@ require_once "../lib/settings.php";
 require_once "../lib/function.php";
 
 $halaman=isset($_GET['halaman'])?$_GET['halaman'].".php":"dashboard.php";
-$aktif=array('registrasi'=>"",'dashboard'=>"",'lapangan'=>"",'transaksi'=>"",'laporan'=>"");
+$aktif=array('off_booking'=>"",'dashboard'=>"",'lapangan'=>"",'transaksi'=>"",'laporan'=>"");
 if(isset($_GET['halaman'])){
 	$aktif[$_GET['halaman']]='active';
 	if($_GET['halaman']=="logout"){
@@ -128,7 +128,7 @@ $row = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM pegawais WHERE no_ktp
                     </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
                     <li class="no-padding <?=$aktif['dashboard']?>"><a class="waves-effect waves-grey active" href="?"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
-                    <li class="no-padding <?=$aktif['registrasi']?> "><a class="waves-effect waves-grey active" href="?halaman=registrasi"><i class="material-icons">assignment</i>Registrasi</a></li>
+                    <li class="no-padding <?=$aktif['off_booking']?> "><a class="waves-effect waves-grey active" href="?halaman=off_booking"><i class="material-icons">assignment</i>Offline Booking</a></li>
                     <li class="no-padding <?=$aktif['transaksi']?>"><a class="waves-effect waves-grey active" href="?halaman=transaksi"><i class="material-icons">add_shopping_cart</i>Transaksi</a></li>
                     <li class="no-padding <?=$aktif['lapangan']?>"><a class="waves-effect waves-grey active" href="?halaman=lapangan"><i class="material-icons">settings_input_svideo</i>Lapangan</a></li>
                     <li class="no-padding <?=$aktif['laporan']?>"><a class="waves-effect waves-grey active" href="?halaman=laporan"><i class="material-icons">insert_chart</i>Laporan</a></li>

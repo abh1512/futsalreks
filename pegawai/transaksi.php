@@ -2,7 +2,7 @@
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
-                                <span class="card-title">DATA MAHASISWA</span><br>
+                                <span class="card-title">DATA TRANSAKSI</span><br>
                                 <table id="example" class="display responsive-table highlight">
                                     <thead>
                                         <tr>
@@ -13,36 +13,28 @@
                                             <th>Jam Mulai</th>
                                             <th>Lama Sewa</th>
                                             <th>Biaya</th>
-                                            <th>Bukti</th>
-                                            <th>Verifikasi</th>
+                                            <th>Batas Pembayaran</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                          <th>ID_Transaksi</th>
-                                          <th>Nama Pelanggan</th>
-                                          <th>Lapangan</th>
-                                          <th>Tanggal</th>
-                                          <th>Jam Mulai</th>
-                                          <th>Lama Sewa</th>
-                                          <th>Biaya</th>
-                                          <th>Bukti</th>
-                                          <th>Verifikasi</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                       <?php
-                                    /*  $er=mysqli_query($con,"SELECT id_pengguna,nama_pengguna,email,nama_prodi,jurusan,jabatan,hak_akses,status
-                                          from tbl_pendaftaran inner join tbl_pengguna on id_pengguna=nim inner join prodi on id=prodi where hak_akses=7");
+                                     $er=mysqli_query($con,"SELECT t.id_transaksi as id , nama_pelanggan ,t.id_lapangan, jam ,total_bayar, (select count(e.id_transaksi) from detil_transaksi e where e.id_transaksi = t.id_transaksi) as lama_sewa , (select nama from lapangans l where l.id_lapangan = t.id_lapangan) as nama_lapangan , tgl_sewa,batas_pembayaran,status
+                                          from transaksis t inner join detil_transaksi d on d.id_transaksi = t.id_transaksi ");
                                       while($r=mliSelect($er)){
                                         ?>
                                         <tr>
-                                            <td><input type="hidden" name='id_unesa' value="<?=$r->id_pengguna?>"><?=$r->id_pengguna?></td>
-                                            <td><input type="hidden" name='nama' value="<?=$r->nama_pengguna?>"><?=$r->nama_pengguna?></td>
-                                            <td><input type="hidden" name='prodi' value="<?=$r->nama_prodi?>"><?=$r->nama_prodi?></td>
-                                            <td><input type="hidden" name='status' value="<?=$r->status?>"><?=$r->status?></td>
+                                            <td><input type="hidden"  value="<?=$r->id?>"><?=$r->id?></td>
+                                            <td><input type="hidden"  value="<?=$r->nama_pelanggan?>"><?=$r->nama_pelanggan?></td>
+                                            <td><input type="hidden"  value="<?=$r->nama_lapangan?>"><?=$r->nama_lapangan?></td>
+                                            <td><input type="hidden"  value="<?=$r->tgl_sewa?>"><?=$r->tgl_sewa?></td>
+                                            <td><input type="hidden"  value="<?=$r->jam?>"><?=$r->jam?></td>
+                                            <td><input type="hidden"  value="<?=$r->lama_sewa?>"><?=$r->lama_sewa?> JAM</td>
+                                            <td><input type="hidden"  value="<?=$r->total_bayar?>"><?=$r->total_bayar?></td>
+                                            <td><input type="hidden"  value="<?=$r->batas_pembayaran?>"><?=$r->batas_pembayaran?></td>
+                                            <td><input type="hidden"  value="<?=$r->status?>"><?=$r->status?></td>
                                         </tr>
-                                        <?php } */?>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
