@@ -35,6 +35,8 @@ if(isset($_GET['halaman'])){
         <link href="assets/plugins/metrojs/MetroJs.min.css" rel="stylesheet">
         <link href="assets/plugins/weather-icons-master/css/weather-icons.min.css" rel="stylesheet">
 
+        <link href="assets/plugins/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+
 
         <!-- Theme Styles -->
         <link href="assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
@@ -177,7 +179,7 @@ if(isset($_GET['halaman'])){
 			    </div>
 			    <div class="footer-copyright">
 			      <div class="container">
-			      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+			      Made by <a class="orange-text text-lighten-3" href="#!">Materialize</a>
 			      </div>
 			    </div>
 			  </footer>
@@ -189,18 +191,13 @@ if(isset($_GET['halaman'])){
         <script src="assets/plugins/materialize/js/materialize.min.js"></script>
         <script src="assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
         <script src="assets/plugins/jquery-blockui/jquery.blockui.js"></script>
+        <script src="assets/plugins/datatables/js/jquery.dataTables.min.js"></script>
         <script src="assets/js/alpha.min.js"></script>
         <script src="assets/js/pages/ui-carousel.js"></script>
 				<script src="assets/js/pages/form_elements.js"></script>
-        <script src="assets/js/pages/table-data.js"></script>
+        
         <script src="assets/js/custom.js"></script>
-        <script>
-        $(document).ready(function(){
-            $("a").click(function(){
-            $( this ).hide();
-            });
-          });
-        </script>
+
 
     </body>
 </html>

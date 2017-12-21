@@ -44,16 +44,26 @@
 <div class="row">
 
   <div class="col s6">
-    <div class="card center-align">
+    <div class="card center-align" >
       <div class="card-title tit-top">
         Jadwal Lapangan
       </div>
-
+   <div class="card-content">
       <div class="row">
         <div class="col s3"></div>
         <div class="col s6">
             <label for="birthdate">Pilih Tanggal</label>
-            <input id="birthdate" type="text" class="datepicker center-align" value="<?= date('j F, Y');?>">
+            <input id="birthdate" type="text" class="datepicker center-align" value="
+            <?php
+            if(isset($_SESSION['tanggal']))
+            {
+              echo $_SESSION['tanggal'];
+            }
+            else{
+              echo date('j F, Y');
+            }
+
+            ?>">
         </div>
         <div class="col s3"></div>
       </div>
@@ -62,7 +72,13 @@
       <div class="row">
         <div class="col s2"></div>
         <div class="col s8" id="<?=$row->id_lapangan?>">
-          <table class="bordered" id="jadwal">
+          <table class="bordered" id="jam_lapangan">
+            <thead style="display:none;">
+              <tr>
+                  <th>Name</th>
+                  <th>Position</th>
+              </tr>
+            </thead>
             <tbody>
               <?php
               $a = mysqli_query($con,"SELECT dl.*,dt.* FROM detil_lapangans AS dl LEFT OUTER JOIN detil_transaksi AS dt ON dl.jam_mulai = dt.jam WHERE dl.id_lap = '$row->id_lapangan' ORDER BY jam_mulai ASC");
@@ -76,7 +92,7 @@
                       $booking = '<a class="waves-effect waves-light btn disabled status cyan darken-2" >SUDAH DIPESAN</a>';
                       if($r->jam == "")
                       {
-                        $booking = '<a class="waves-effect waves-light btn status pesan" >PESAN</a>';
+                        $booking = '<a class="waves-effect waves-light btn status statuson pesan" id="'.$r->id_detil_lapangan.'" >PESAN</a>';
                       }
                       echo $booking;
                    ?>
@@ -89,7 +105,7 @@
         <div class="col s2"></div>
       </div>
       <?php } ?>
-
+   </div>
     </div>
   </div>
 
@@ -104,7 +120,18 @@
         <div class="col s3"></div>
         <div class="col s6">
             <label for="birthdate">Peminjaman untuk tanggal</label>
-            <input id="birthdate" readonly type="text" class="datepicker center-align" value="<?= date('j F, Y');?>">
+            <input id="untuk" readonly type="text" class="datepicker center-align" value="
+            <?php
+            if(isset($_SESSION['tanggal']))
+            {
+              echo $_SESSION['tanggal'];
+            }
+            else{
+              echo date('j F, Y');
+            }
+
+            ?>
+            ">
         </div>
         <div class="col s3"></div>
       </div>
@@ -112,7 +139,7 @@
       <div class="row">
         <div class="col s3"></div>
         <div class="col s6">
-          <table class="bordered">
+          <table class="bordered" id="sementara">
             <thead >
                 <tr>
                     <th data-field="id" class="center-align">Jam</th>
@@ -120,12 +147,6 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="center-align"><a class="waves-effect waves-light btn status center-align">01:00 - 02.00</a></td>
-                    <td class="center-align">
-                      <a class="btn-floating btn-small waves-effect waves-light red center-align"><i class="material-icons">delete_forever</i></a>
-                    </td>
-                </tr>
                 <tr>
                     <td class="center-align"><a class="waves-effect waves-light btn status center-align">01:00 - 02.00</a></td>
                     <td class="center-align">
