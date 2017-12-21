@@ -195,7 +195,7 @@ if(isset($_GET['halaman'])){
         <script src="assets/js/alpha.min.js"></script>
         <script src="assets/js/pages/ui-carousel.js"></script>
 				<script src="assets/js/pages/form_elements.js"></script>
-        
+
         <script src="assets/js/custom.js"></script>
 
 

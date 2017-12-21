@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+    /*
       $('#jam_lapangan').DataTable({
         "bPaginate": false,
       "bFilter": false,
@@ -17,8 +18,8 @@ $(document).ready(function(){
           }
           }
       });
-/*
-      $('#jam_lapangan').DataTable({
+
+      $('#sementara').DataTable({
         "bPaginate": false,
       "bFilter": false,
       "bInfo": false,
@@ -33,36 +34,71 @@ $(document).ready(function(){
                   sNext: '<i class="material-icons">chevron_right</i>',
                   sLast: '<i class="material-icons">chevron_right</i>'
           }
-          }
+        },
+        "processing" : false,
+        "ajax" : {
+            "url" : "sementara.php",
+            dataSrc : ''
+        },
+        "columns" : [ {
+            "data" : "jam"
+        }, {
+            "data" : "jam"
+        }]
       });*/
       $('.dataTables_length select').addClass('browser-default');
 
 
     $(".statuson").click(function(){
-      alert($(this).attr('id'));
-      var id_det_lap = $(this).attr('id');
+    //  alert($(this).attr('id'));
+
+    /*  var id_det_lap = $(this).attr('id');
       $.ajax({
           url : "sementara.php",
           type: "POST",
-          data: "id="+id_det_lap,
+          data: "id="+id_det_lap+"&key=insert",
           success: function(data){
             alert(data);
           }
-      });
+      });*/
 
     })
 
-    $("#birthdate").change(function(){
+    $("#pembayaran").click(function(){
+      var durasi = "";
+      var id = "";
+      var tanggal = $("#birthdate").val();
+
+      if($('#durasi').val() != null)
+      {
+        id = $(".statuson").attr('id');
+        durasi = $('#durasi').val();
+
+        $.ajax({
+            url : "backend.php",
+            type: "POST",
+            data: "durasi="+durasi+"&id="+id+"&tanggal="+tanggal,
+            success: function(data){
+
+
+            }
+        });
+      window.location.href = '?pag=konfirmasi';
+
+      }
+
+    })
+
+    /*$("#birthdate").change(function(){
       var tanggal = $(this).val();
       $.ajax({
           url : "backend.php",
           type: "POST",
-          data: "tanggal="+tanggal,
+          data: "key=tgl&tanggal="+tanggal,
           success: function(data){
-            alert(data);
           }
       });
-    })
+    })*/
 
 
   });
