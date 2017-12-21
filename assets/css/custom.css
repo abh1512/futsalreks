@@ -10,3 +10,19 @@
 .top-pad{
   margin-top: 20px;
 }
+
+.atas{
+  height: 240px;
+}
+
+.warna-text{
+  color: black;
+}
+
+.head{
+  height: 20px;
+}
+
+a{
+  text-decoration: none;
+}
