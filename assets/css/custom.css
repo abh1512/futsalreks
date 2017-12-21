@@ -26,3 +26,12 @@
 a{
   text-decoration: none;
 }
+
+.status{
+  width:175px;
+  background-color: #0097a7;
+}
+
+.tit-top{
+  padding-top: 20px;
+}

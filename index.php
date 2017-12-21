@@ -121,7 +121,7 @@ if(isset($_GET['halaman'])){
                         <ul class="right col s9 m3 nav-right-menu">
                             <li class="hide-on-large-only"><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown2"><i class="material-icons right">more_vert</i></a></li>
                             <li class="hide-on-med-and-down"><a class="waves-effect waves-light modal-trigger" href="#modal1">Masuk</a></li>
-                            <li class="hide-on-med-and-down"><a href="regis.php"  class="dropdown-right show-on-large">Daftar</a></li>
+                            <li class="hide-on-med-and-down"><a href="#!"  class="dropdown-right show-on-large" id="daftar">Daftar</a></li>
                         </ul>
 
                         <ul id="dropdown1" class="dropdown-content notification-dropdown">
@@ -133,7 +133,7 @@ if(isset($_GET['halaman'])){
                             <li class="notificatoins-dropdown-container" >
                                 <ul>
                                   <li><a class="waves-effect waves-light modal-trigger" href="#modal1">Masuk</a></li>
-                                  <li><a href="regis.php">Daftar</a></li>
+                                  <li><a href="#!" id="daftar">Daftar</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -192,6 +192,15 @@ if(isset($_GET['halaman'])){
         <script src="assets/js/alpha.min.js"></script>
         <script src="assets/js/pages/ui-carousel.js"></script>
 				<script src="assets/js/pages/form_elements.js"></script>
+        <script src="assets/js/pages/table-data.js"></script>
+        <script src="assets/js/custom.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("a").click(function(){
+            $( this ).hide();
+            });
+          });
+        </script>
 
     </body>
 </html>
