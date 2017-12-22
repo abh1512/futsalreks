@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $('.daftar').click(function(){
-    alert($(this).attr(íd));
+    alert($(this).attr('id'));
   })
     /*
       $('#jam_lapangan').DataTable({
