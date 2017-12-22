@@ -78,7 +78,40 @@
             ?>
       </div>
   </div>
-
+  <div id="modalLama" class="modal modal-fixed-footer">
+      <div class="modal-content">
+          <h4 class="center-align">Durasi Main</h4>
+          <div class="input-field col s12">
+            <select id="durasi">
+                <option value="1" selected>1 Jam</option>
+                <option value="2">2 Jam</option>
+                <option value="3">3 Jam</option>
+                <option value="4">4 Jam</option>
+            </select>
+            <label>Pilih Durasi Jam</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+          <a href="#!" class="waves-effect waves-light btn" id="pembayaran"><i class="large material-icons right">chevron_right</i>Pembayaran</a>
+      </div>
+  </div>
+  <div id="modalLama" class="modal modal-fixed-footer">
+      <div class="modal-content">
+          <h4 class="center-align">Durasi Main</h4>
+          <div class="input-field col s12">
+            <select id="durasi">
+                <option value="1" selected>1 Jam</option>
+                <option value="2">2 Jam</option>
+                <option value="3">3 Jam</option>
+                <option value="4">4 Jam</option>
+            </select>
+            <label>Pilih Durasi Jam</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+          <a href="#!" class="waves-effect waves-light btn" id="pembayaran"><i class="large material-icons right">chevron_right</i>Pembayaran</a>
+      </div>
+  </div>
 <?php
 //load setelah jquery telah diload di index.php
   $loadAfterJQuery='
