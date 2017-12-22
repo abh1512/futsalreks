@@ -29,7 +29,7 @@ if($ha == "pegawai")
   {
     $kk = "Kode referensi tidak terdaftar".$arr[0];
   }
- 
+
 }
 else if($ha == "pemilik")
 {
@@ -57,8 +57,7 @@ else if($ha == "customer")
 
 if($kk == "")
 {
-  if($ha != 'customer')
-  {
+
     if(mliInsert($con,$tipe,$col,$val)){
 
       $pass = $_POST['pass'];
@@ -73,7 +72,7 @@ if($kk == "")
         $mail->SMTPDebug = 0;
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = 'tls';
-        $mail->Host = 'mx1.hostinger.co.id';
+        $mail->Host = 'mx1.hostinger.com';
         $mail->Port = 587;
         $mail->Username = 'admin@futsalrek.com';
         $mail->Password = 'adminfutsalrek';
@@ -98,7 +97,7 @@ if($kk == "")
 
         }
         else {
-          echo $msg;
+          //echo $msg;
         }
       }
       else{
@@ -106,9 +105,15 @@ if($kk == "")
       }
     }
     else{
-      echo "gagal";
+      if($ha == "customer")
+      {
+        echo "Email sudah terdaftar";
+      }
+      else{
+        echo "No KTP atau Email sudah terdaftar";
+      }
     }
-  }
+
 }
 else
 {

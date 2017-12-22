@@ -21,7 +21,7 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input placeholder="" name="no_hp" type="text" autocomplete="off" class="validate" readonly onfocus="this.removeAttribute('readonly');" >
+              <input placeholder="" name="no_hp" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' autocomplete="off" class="validate" readonly onfocus="this.removeAttribute('readonly');" >
               <label for="first_name">Nomor HP</label>
             </div>
           </div>
@@ -33,7 +33,7 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input placeholder="" name="password" type="text" autocomplete="off" class="validate" readonly onfocus="this.removeAttribute('readonly');" >
+              <input placeholder="" name="pass" type="password" autocomplete="off" class="validate" readonly onfocus="this.removeAttribute('readonly');" >
               <label for="first_name">Password</label>
             </div>
           </div>

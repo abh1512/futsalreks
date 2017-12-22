@@ -2,25 +2,25 @@ $(document).ready(function(){
   $('.daftar').click(function(){
     var key = $(this).attr('id');
     $.ajax({
-        url : "login.php",
+        url : "register.php",
         type: "POST",
-        data: $("#form_penyewaan").serialize()+"&key="+key,
+        data: $("#form_penyewaan").serialize()+"&tipe="+key,
         success: function(data){
-          alert(data);
-/*        if(data == "pegawai")
-          {
-            window.location.href = ""+data;
-          }
-          else {
-            swal({
-                title: "Gagal Masuk",
-                text: ""+data,
-                type: "warning",
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "OK",
-            });
-          }
-*/
+
+        if(data == "Pendaftaran berhasil, silahkan cek email untuk aktivasi!")
+        {
+          swal("Pendaftaran Berhasil!", ""+data, "success")
+        }
+        else {
+          swal({
+              title: "Pendaftaran Berhasil",
+              text: ""+data,
+              type: "warning",
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "OK",
+          });
+        }
+
         }
     });
   })
@@ -105,7 +105,7 @@ $(document).ready(function(){
             }
             else if(data == "customer")
             {
-              window.location.href = ""+data;
+              location.reload();
             }
             else {
               swal({

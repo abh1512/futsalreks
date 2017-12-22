@@ -16,6 +16,7 @@ if($row > 0)
   else if($isi[3] == ''){
     echo $isi[2];
     $ha = $isi[2];
+    $_SESSION['ha'] == "".$ha;
     if($ha = $isi[2] == "pemilik" || $ha = $isi[2] == "pegawai")
     {
       $ha = $isi[2].'s';

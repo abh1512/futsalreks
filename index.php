@@ -3,6 +3,7 @@ require_once "lib/settings.php";
 require_once "lib/function.php";
 
 $halaman=isset($_GET['pag'])?$_GET['pag'].".php":"home.php";
+
 /*$aktif=array('registrasi'=>"",'dashboard'=>"",'lapangan'=>"",'transaksi'=>"",'laporan'=>"");
 if(isset($_GET['halaman'])){
 	$aktif[$_GET['halaman']]='active';
@@ -38,6 +39,11 @@ if(isset($_GET['halaman'])){
          <link href="assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css"/>
 
         <link href="assets/plugins/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+        <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+        <link rel="stylesheet" href="assets/css/materialize-social.css">
 
 
         <!-- Theme Styles -->
@@ -111,7 +117,7 @@ if(isset($_GET['halaman'])){
                       <div class="row">
                         <div class="input-field col s12">
                           <input id="password" type="password" name="password" class="validate">
-                          <label for="email">Email</label>
+                          <label for="email">Password</label>
                         </div>
                       </div>
                     </form>
@@ -121,44 +127,66 @@ if(isset($_GET['halaman'])){
                   <a href="#!" class=" modal-action  waves-effect waves-green btn-flat" id="tombol_login">Masuk</a>
               </div>
           </div>
-            <header class="mn-header" >
-                <nav class="cyan darken-2" >
-                    <div class="nav-wrapper row">
+          <header class="mn-header" >
+              <nav class="cyan darken-2" >
+                  <div class="nav-wrapper row">
+                    <div class="header-title">
+                      <a href="./"><img class="circle" src="assets/images/logo.png" style="margin:5px" height="50" width="50"/></a>
+                    </div>
+                      <div class="header-title col s3 m3">
+                          <a href="./"><span class="chapter-title">FutsalRek</span></a>
+                      </div>
+                      <form class="left search col s5 hide-on-small-and-down">
+                          <div class="input-field">
+                              <input id="search" type="search" placeholder="Search" autocomplete="off">
+                              <label for="search"><i class="material-icons search-icon">search</i></label>
+                          </div>
+                          <a href="javascript: void(0)" class="close-search"><i class="material-icons">close</i></a>
+                      </form>
 
-                        <div class="header-title col s3 m3">
-                            <a href="./"><span class="chapter-title" >FutsalRek</span></a>
-                        </div>
+                      <ul class="right col s9 m3 nav-right-menu">
+                          <li class="hide-on-large-only"><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown2"><i class="material-icons right">more_vert</i></a></li>
+                          <?php
+                          if(isset($_SESSION['email']) && isset($_SESSION['ha']))
+                          {
+                            $ha = $_SESSION['ha'];
+                            if($ha == 'customer')
+                            {
 
-												<form class="left search col s6 hide-on-small-and-down">
-                            <div class="input-field">
-                                <input id="search" type="search" placeholder="Search" autocomplete="off">
-                                <label for="search"><i class="material-icons search-icon">search</i></label>
-                            </div>
-                            <a href="javascript: void(0)" class="close-search"><i class="material-icons">close</i></a>
-                        </form>
-
-                        <ul class="right col s9 m3 nav-right-menu">
-                            <li class="hide-on-large-only"><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown2"><i class="material-icons right">more_vert</i></a></li>
+                            }
+                            else {
+                              echo '
+                              <li class="hide-on-med-and-down"><a class="waves-effect waves-light modal-trigger" href="#modal1">Masuk</a></li>
+                              <li class="hide-on-med-and-down"><a href="?pag=daftar"  class="dropdown-right show-on-large" id="daftar">Daftar</a></li>
+                              ';
+                            }
+                          }
+                          else {
+                            echo '
                             <li class="hide-on-med-and-down"><a class="waves-effect waves-light modal-trigger" href="#modal1">Masuk</a></li>
                             <li class="hide-on-med-and-down"><a href="?pag=daftar"  class="dropdown-right show-on-large" id="daftar">Daftar</a></li>
-                        </ul>
+                            ';
+                          }
+                          ?>
 
-                        <ul id="dropdown1" class="dropdown-content notification-dropdown">
-                          <li><a class="waves-effect waves-light modal-trigger" href="#modal1">Masuk</a></li>
-                          <li><a href="?pag=daftar">Daftar</a></li>
-                        </ul>
+                      </ul>
 
-                        <ul id="dropdown2" class="dropdown-content notifications-dropdown" >
-                            <li class="notificatoins-dropdown-container" >
-                                <ul>
-                                  <li><a class="waves-effect waves-light modal-trigger" href="#modal1">Masuk</a></li>
-                                  <li><a href="#!" id="daftar">Daftar</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
+                      <ul id="dropdown1" class="dropdown-content notification-dropdown">
+                        <li><a class="waves-effect waves-light modal-trigger" href="#modal1">Masuk</a></li>
+                        <li><a href="?pag=daftar">Daftar</a></li>
+                      </ul>
+
+                      <ul id="dropdown2" class="dropdown-content notifications-dropdown" >
+                          <li class="notificatoins-dropdown-container" >
+                              <ul>
+                                <li><a class="waves-effect waves-light modal-trigger" href="#modal1">Masuk</a></li>
+                                <li><a href="#!" id="daftar">Daftar</a></li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </div>
+              </nav>
+          </header>
 
             <main class="mn-inner ">
                     <?php
@@ -170,28 +198,57 @@ if(isset($_GET['halaman'])){
 
         </div>
 
-				<footer class="page-footer grey lighten-4 atas">
+        <footer class="page-footer grey lighten-4 atas">
 			    <div class="container">
 			      <div class="row">
-			        <div class="col l6 s12">
-			          <h5 class="">FutsalRek</h5>
-								<ul>
-			            <li><a class="" href="#!">Tentang Kami</a></li>
-			            <li><a class="" href="#!">Cara Booking</a></li>
-			            <li><a class="" href="#!">Cara Daftar Lapangan</a></li>
-			            <li><a class="" href="#!">Hubungi Kami</a></li>
-			          </ul>
+              <div class="col s5">
+                <div class="card horizontal">
+                  <div class="card-image">
+                      <img style="margin:25px" src="assets/images/logo.png">
+                  </div>
+                  <div class="card-stacked">
+                      <div class="card-content">
+                          <h5>FutsalRek</h5>
+                          <ul>
+          			            <li><a class="" href="#!">Tentang Kami</a></li>
+          			            <li><a class="" href="#!">Cara Booking</a></li>
+          			            <li><a class="" href="#!">Cara Daftar Lapangan</a></li>
+          			            <li><a class="" href="#!">Hubungi Kami</a></li>
+          			          </ul>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col s1  "></div>
+              <div class="col s6">
+                <div class="card horizontal">
+                  <div class="card-image">
 
-			        </div>
-			        <div class="col l6 s12">
-			          <h5 class="">Settings</h5>
-			          <ul>
-			            <li><a class="" href="#!">Link 1</a></li>
-			            <li><a class="" href="#!">Link 2</a></li>
-			            <li><a class="" href="#!">Link 3</a></li>
-			            <li><a class="" href="#!">Link 4</a></li>
-			          </ul>
-			        </div>
+                  </div>
+                  <div class="card-stacked">
+                      <div class="card-content">
+                        <h5 class="">Follow Us</h5>
+
+
+                          <a href="#" class="waves-effect waves-light social-icon btn facebook">
+                              <i class="fa fa-facebook"></i></a>
+                          <a href="#" class="waves-effect waves-light social-icon btn twitter">
+                              <i class="fa fa-twitter"></i></a>
+                          <a href="#" class="waves-effect waves-light social-icon btn google">
+                              <i class="fa fa-google"></i></a>
+                          <a href="#" class="waves-effect waves-light social-icon btn pinterest">
+                              <i class="fa fa-pinterest"></i></a>
+                          <a href="#" class="waves-effect waves-light social-icon btn instagram">
+                              <i class="fa fa-instagram"></i></a>
+                          <a href="#" class="waves-effect waves-light social-icon btn github">
+                              <i class="fa fa-github"></i></a>
+                          <a href="#" class="waves-effect waves-light social-icon btn linkedin">
+                              <i class="fa fa-linkedin"></i></a>
+
+                      </div>
+                  </div>
+                </div>
+              </div>
 			      </div>
 			    </div>
 			    <div class="footer-copyright">
