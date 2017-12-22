@@ -16,6 +16,8 @@ if(isset($_GET['halaman'])){
 }
 
 $row = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM pegawais WHERE no_ktp='$_SESSION[id_pengguna]'"));
+$id_gedung = $row[2];
+$row2 = mysqli_fetch_array(mysqli_query($con,"SELECT nama FROM gedungs WHERE id_gedung='$id_gedung'"));
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,7 +112,7 @@ $row = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM pegawais WHERE no_ktp
                     </ul>
                     <ul class="right col s9 m3 nav-right-menu">
                       <li class=""><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown1"><i class="material-icons right">perm_identity</i></a></li>
-                      <li><small>Kebraon Sport Center</small></li>
+                      <li><small><?=$row2[0]?></small></li>
                     </ul>
                 </div>
               </nav>
@@ -119,7 +121,7 @@ $row = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM pegawais WHERE no_ktp
                 <div class="side-nav-wrapper">
                     <div class="sidebar-profile center">
                         <div class="sidebar-profile-image">
-                            <img src="../../assets/images/profile-image.png" class="circle" alt="">
+                            <img src="../assets/images/profile-image.png" class="circle" alt="">
                         </div>
                         <div class="sidebar-profile-info">
                                 <p><?=$row['nama']?></p>
@@ -131,12 +133,8 @@ $row = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM pegawais WHERE no_ktp
                     <li class="no-padding <?=$aktif['off_booking']?> "><a class="waves-effect waves-grey active" href="?halaman=off_booking"><i class="material-icons">assignment</i>Offline Booking</a></li>
                     <li class="no-padding <?=$aktif['transaksi']?>"><a class="waves-effect waves-grey active" href="?halaman=transaksi"><i class="material-icons">add_shopping_cart</i>Transaksi</a></li>
                     <li class="no-padding <?=$aktif['lapangan']?>"><a class="waves-effect waves-grey active" href="?halaman=lapangan"><i class="material-icons">settings_input_svideo</i>Lapangan</a></li>
-                    <li class="no-padding <?=$aktif['laporan']?>"><a class="waves-effect waves-grey active" href="?halaman=laporan"><i class="material-icons">insert_chart</i>Laporan</a></li>
+                    <!--li class="no-padding <!--?=$aktif['laporan']?>"><a class="waves-effect waves-grey active" href="?halaman=laporan"><i class="material-icons">insert_chart</i>Laporan</a></li-->
                 </ul>
-                <div class="footer">
-                    <p class="copyright">Steelcoders ©</p>
-                    <a href="#!">Privacy</a> &amp; <a href="#!">Terms</a>
-                </div>
                 </div>
             </aside>
             <main class="mn-inner inner-active-sidebar">
@@ -158,16 +156,10 @@ $row = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM pegawais WHERE no_ktp
 				<script src="../assets/plugins/waypoints/jquery.waypoints.min.js"></script>
 				<script src="../assets/plugins/counter-up-master/jquery.counterup.min.js"></script>
 				<script src="../assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
-				<!--script src="../assets/plugins/chart.js/chart.min.js"></script-->
-				<!--script src="../assets/plugins/flot/jquery.flot.min.js"></script>
-				<script src="../assets/plugins/flot/jquery.flot.time.min.js"></script>
-				<script src="../assets/plugins/flot/jquery.flot.symbol.min.js"></script>
-				<script src="../assets/plugins/flot/jquery.flot.resize.min.js"></script>
-				<script src="../assets/plugins/flot/jquery.flot.tooltip.min.js"></script>
-				<script src="../assets/plugins/curvedlines/curvedLines.js"></script-->
 				<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
 				<script src="../assets/js/alpha.min.js"></script>
 				<script src="../assets/plugins/sweetalert/sweetalert.min.js"></script>
+				<script src="../assets/js/pages/form_elements.js"></script>
 				<?=isset($loadAfterJQuery)?$loadAfterJQuery:"";?>
 
     </body>
