@@ -1,3 +1,8 @@
+<?php  $er2="SELECT id_gedung from pegawais where no_ktp='$_SESSION[id_pengguna]'";
+$data2=mliSelect(mysqli_query($con,$er2));
+$gedung_id = $data2->id_gedung;
+?>
+
 <div class="row">
                     <div class="col s12 m12 l12">
                         <div class="card">
@@ -20,7 +25,8 @@
                                     <tbody>
                                       <?php
                                      $er=mysqli_query($con,"SELECT t.id_transaksi as id , nama_pelanggan ,t.id_lapangan, jam ,total_bayar, (select count(e.id_transaksi) from detil_transaksi e where e.id_transaksi = t.id_transaksi) as lama_sewa , (select nama from lapangans l where l.id_lapangan = t.id_lapangan) as nama_lapangan , tgl_sewa,batas_pembayaran,status
-                                          from transaksis t inner join detil_transaksi d on d.id_transaksi = t.id_transaksi ");
+                                          from transaksis t inner join detil_transaksi d on d.id_transaksi = t.id_transaksi
+                                          where t.id_lapangan LIKE '$gedung_id%'");
                                       while($r=mliSelect($er)){
                                         ?>
                                         <tr>

@@ -109,7 +109,7 @@ function simpan_edit(){
           if(result.status){
             swal({
                 title: "SUKSES!",
-                text: "Berhasil edit harga!",
+                text: "Berhasil Edir Harga!",
                 type: "success",
                 confirmButtonText: "OK",
                 closeOnConfirm: false
@@ -118,8 +118,8 @@ function simpan_edit(){
             });
           }
         },
-        error: function(xhr, Status, err) {
-          $("Terjadi error : "+Status);
+        error: function(result) {
+          console.log(result)
         }
 
       });
