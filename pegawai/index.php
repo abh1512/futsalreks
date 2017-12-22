@@ -158,16 +158,10 @@ $row = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM pegawais WHERE no_ktp
 				<script src="../assets/plugins/waypoints/jquery.waypoints.min.js"></script>
 				<script src="../assets/plugins/counter-up-master/jquery.counterup.min.js"></script>
 				<script src="../assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
-				<!--script src="../assets/plugins/chart.js/chart.min.js"></script-->
-				<!--script src="../assets/plugins/flot/jquery.flot.min.js"></script>
-				<script src="../assets/plugins/flot/jquery.flot.time.min.js"></script>
-				<script src="../assets/plugins/flot/jquery.flot.symbol.min.js"></script>
-				<script src="../assets/plugins/flot/jquery.flot.resize.min.js"></script>
-				<script src="../assets/plugins/flot/jquery.flot.tooltip.min.js"></script>
-				<script src="../assets/plugins/curvedlines/curvedLines.js"></script-->
 				<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
 				<script src="../assets/js/alpha.min.js"></script>
 				<script src="../assets/plugins/sweetalert/sweetalert.min.js"></script>
+				<script src="../assets/js/pages/form_elements.js"></script>
 				<?=isset($loadAfterJQuery)?$loadAfterJQuery:"";?>
 
     </body>
