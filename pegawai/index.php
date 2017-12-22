@@ -3,7 +3,7 @@ require_once "../lib/settings.php";
 require_once "../lib/function.php";
 
 $halaman=isset($_GET['halaman'])?$_GET['halaman'].".php":"dashboard.php";
-$aktif=array('registrasi'=>"",'dashboard'=>"",'lapangan'=>"",'transaksi'=>"",'laporan'=>"");
+$aktif=array('off_booking'=>"",'dashboard'=>"",'lapangan'=>"",'transaksi'=>"",'laporan'=>"");
 if(isset($_GET['halaman'])){
 	$aktif[$_GET['halaman']]='active';
 	if($_GET['halaman']=="logout"){
@@ -37,10 +37,10 @@ $row = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM pegawais WHERE no_ktp
 				<link href="../assets/plugins/weather-icons-master/css/weather-icons.min.css" rel="stylesheet">
 				<link href="../assets/plugins/google-code-prettify/prettify.css" rel="stylesheet" type="text/css"/>
 				<link href="../assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css"/>
+				<link href="../assets/plugins/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 
 				<!-- Theme Styles -->
 				<link href="../assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
-
 				<link href="../assets/css/custom.css" rel="stylesheet" type="text/css"/>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -128,7 +128,7 @@ $row = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM pegawais WHERE no_ktp
                     </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
                     <li class="no-padding <?=$aktif['dashboard']?>"><a class="waves-effect waves-grey active" href="?"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
-                    <li class="no-padding <?=$aktif['registrasi']?> "><a class="waves-effect waves-grey active" href="?halaman=registrasi"><i class="material-icons">assignment</i>Registrasi</a></li>
+                    <li class="no-padding <?=$aktif['off_booking']?> "><a class="waves-effect waves-grey active" href="?halaman=off_booking"><i class="material-icons">assignment</i>Offline Booking</a></li>
                     <li class="no-padding <?=$aktif['transaksi']?>"><a class="waves-effect waves-grey active" href="?halaman=transaksi"><i class="material-icons">add_shopping_cart</i>Transaksi</a></li>
                     <li class="no-padding <?=$aktif['lapangan']?>"><a class="waves-effect waves-grey active" href="?halaman=lapangan"><i class="material-icons">settings_input_svideo</i>Lapangan</a></li>
                     <li class="no-padding <?=$aktif['laporan']?>"><a class="waves-effect waves-grey active" href="?halaman=laporan"><i class="material-icons">insert_chart</i>Laporan</a></li>
@@ -158,13 +158,13 @@ $row = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM pegawais WHERE no_ktp
 				<script src="../assets/plugins/waypoints/jquery.waypoints.min.js"></script>
 				<script src="../assets/plugins/counter-up-master/jquery.counterup.min.js"></script>
 				<script src="../assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
-				<script src="../assets/plugins/chart.js/chart.min.js"></script>
-				<script src="../assets/plugins/flot/jquery.flot.min.js"></script>
+				<!--script src="../assets/plugins/chart.js/chart.min.js"></script-->
+				<!--script src="../assets/plugins/flot/jquery.flot.min.js"></script>
 				<script src="../assets/plugins/flot/jquery.flot.time.min.js"></script>
 				<script src="../assets/plugins/flot/jquery.flot.symbol.min.js"></script>
 				<script src="../assets/plugins/flot/jquery.flot.resize.min.js"></script>
 				<script src="../assets/plugins/flot/jquery.flot.tooltip.min.js"></script>
-				<script src="../assets/plugins/curvedlines/curvedLines.js"></script>
+				<script src="../assets/plugins/curvedlines/curvedLines.js"></script-->
 				<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
 				<script src="../assets/js/alpha.min.js"></script>
 				<script src="../assets/plugins/sweetalert/sweetalert.min.js"></script>

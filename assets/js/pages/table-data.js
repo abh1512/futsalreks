@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#example').DataTable({
         language: {
-            searchPlaceholder: 'Search records',
+            searchPlaceholder: 'Cari',
             sSearch: '',
             sLengthMenu: 'Show _MENU_',
             sLength: 'dataTables_length',
@@ -9,7 +9,7 @@ $(document).ready(function() {
                 sFirst: '<i class="material-icons">chevron_left</i>',
                 sPrevious: '<i class="material-icons">chevron_left</i>',
                 sNext: '<i class="material-icons">chevron_right</i>',
-                sLast: '<i class="material-icons">chevron_right</i>' 
+                sLast: '<i class="material-icons">chevron_right</i>'
         }
         }
     });

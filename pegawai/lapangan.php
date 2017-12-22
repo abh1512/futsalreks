@@ -38,7 +38,7 @@
 
 		<div class="modal-footer">
 		<a class="modal-action modal-close waves-effect waves-green btn-flat" onclick="tambah();" id="<?=$data2->id_gedung?>">Simpan</a>
-		<a class=" modal-action modal-close waves-effect waves-red btn-flat">Close</a>
+		<a class=" modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
 
 		</div>
 	</div>
@@ -54,10 +54,8 @@
                       <th>Id Lapangan</th>
                       <th>Nama lapangan</th>
                       <th>Kategori</th>
-											<!--<th>Jam Mulai</th>
-											<th>Jam Selesai</th>-->
 											<th>Harga</th>
-											<th>Aksi</th>
+											<!--th>Aksi</th-->
                     </tr>
                 </thead>
                 <tbody>
@@ -79,7 +77,7 @@
                             <!--<td><input type="hidden" name='prodi' value=""></td>
                             <td><input type="hidden" name='status' value=""></td>-->
                             <td><input type="hidden"  value=""><a href="?halaman=lapangan_harga&id=<?=$row[0]?>" class="waves-effect waves-light btn"><i class="material-icons left">pageview</i>Lihat Harga</a></td>
-                            <td><a class="small material-icons" href="#">edit</a><a class="small material-icons" href="#">delete</a></td>
+                            <!--td><a class="small material-icons" href="#">edit</a><a class="small material-icons" href="#">delete</a></td-->
                           </tr>
                         <?php $no++;}?>
                   </tr>
