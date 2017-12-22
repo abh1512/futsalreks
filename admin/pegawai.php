@@ -56,16 +56,15 @@
 
 				<div class="card">
           <div class="card-content">
-            <p>PEMILIK</p>
+            <p>PEGAWAI</p>
               <table class="bordered">
                 <thead>
                   <tr>
                       <th>No KTP</th>
-                      <th>Nama Pemilik</th>
+                      <th>Nama Pegawai</th>
 											<th>Alamat</th>
                       <th>Email</th>
 											<th>Telepon</th>
-                      <th>Paket</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -78,8 +77,8 @@
                           $no=1;
                           $jam1 = substr($r->jam_lapangan, 0,5);
                           $jam2 = substr($r->jam_lapangan, 6,5);*/
-                          $pemil = mysqli_query($con,"SELECT * FROM pemiliks");
-                          while($row=mysqli_fetch_array($pemil)){
+                          $pegaw = mysqli_query($con,"SELECT * FROM pegawais");
+                          while($row=mysqli_fetch_array($pegaw)){
 
                           ?>
                           <tr>
@@ -88,7 +87,7 @@
                             <td><input type="hidden" name='prodi' value="<?php echo $row['alamat'] ?>"><?php echo $row['alamat'] ?></td>
                             <td><input type="hidden" name='status' value="<?php echo $row['email'] ?>"><?php echo $row['email'] ?></td>
                             <td><input type="hidden" name='status' value="<?php echo $row['no_hp'] ?>"><?php echo $row['no_hp'] ?></td>
-                            <td></td>
+
                           </tr>
                         <?php }?>
                   </tr>

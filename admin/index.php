@@ -14,7 +14,7 @@ if(isset($_GET['halaman'])){
 }else{
 	$aktif['dashboard']='active';
 }
-
+$row = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM admins WHERE email='$_SESSION[email]'"));
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -117,14 +117,14 @@ if(isset($_GET['halaman'])){
                         </div>
                         <div class="sidebar-profile-info">
                             <a href="javascript:void(0);" class="account-settings-link">
-                                <p>David Doe</p>
-                                <span>david@gmail.com<i class="material-icons right">arrow_drop_down</i></span>
+                                <p><?=$row['nama']?></p>
+                                <span><?=$row['email']?><i class="material-icons right">arrow_drop_down</i></span>
                             </a>
                         </div>
                     </div>
                     <div class="sidebar-account-settings">
                         <ul>
-                            <li class="no-padding">
+                          	<!--<li class="no-padding">
                                 <a class="waves-effect waves-grey"><i class="material-icons">mail_outline</i>Inbox</a>
                             </li>
                             <li class="no-padding">
@@ -136,7 +136,7 @@ if(isset($_GET['halaman'])){
                             <li class="no-padding">
                                 <a class="waves-effect waves-grey"><i class="material-icons">history</i>History<span class="new grey lighten-1 badge">3 new</span></a>
                             </li>
-                            <li class="divider"></li>
+                            <li class="divider"></li>-->
                             <li class="no-padding">
                                 <a class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
                             </li>
@@ -224,6 +224,8 @@ if(isset($_GET['halaman'])){
         <script src="../assets/plugins/peity/jquery.peity.min.js"></script>
         <script src="../assets/js/alpha.min.js"></script>
         <script src="../assets/js/pages/dashboard.js"></script>
-
+				<script src="../assets/js/custom.js"></script>
+				<script src="aksi/file.js"></script>
+				<?=isset($loadAfterJQuery)?$loadAfterJQuery:"";?>
     </body>
 </html>

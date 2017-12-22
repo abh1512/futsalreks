@@ -70,7 +70,7 @@
         </div>
         </div>
   </div>
-  
+
   <div class="row">
     <div class="col s12 m12">
         <h5>Customer</h5>
@@ -89,11 +89,15 @@
     <div class="col s12 m12">
         <h5>Pemilik Lapangan</h5>
     </div>
+    <?php
+      $jumlahpemil = mysqli_query($con,"SELECT COUNT(no_ktp)as jumlahpem FROM pemiliks");
+      $result = mysqli_fetch_array($jumlahpemil);
+     ?>
     <div class="col s12 m3">
         <div class="card">
             <div class="card-content">
             <p class=" center"><b>Total Pemilik</b></p>
-            <h5  class="center">3</h5>
+            <h5  class="center"><?php echo $result['jumlahpem']; ?></h5>
             </div>
         </div>
     </div>

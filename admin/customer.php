@@ -56,16 +56,14 @@
 
 				<div class="card">
           <div class="card-content">
-            <p>PEMILIK</p>
+            <p>CUSTOMER</p>
               <table class="bordered">
                 <thead>
                   <tr>
-                      <th>No KTP</th>
-                      <th>Nama Pemilik</th>
-											<th>Alamat</th>
                       <th>Email</th>
-											<th>Telepon</th>
-                      <th>Paket</th>
+                      <th>Nama</th>
+                      <th>Alamat</th>
+                      <th>Telepon</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -78,17 +76,15 @@
                           $no=1;
                           $jam1 = substr($r->jam_lapangan, 0,5);
                           $jam2 = substr($r->jam_lapangan, 6,5);*/
-                          $pemil = mysqli_query($con,"SELECT * FROM pemiliks");
-                          while($row=mysqli_fetch_array($pemil)){
+                          $cuns = mysqli_query($con,"SELECT email,nama,alamat,no_hp FROM customers");
+                          while($row=mysqli_fetch_array($cuns)){
 
                           ?>
                           <tr>
-                            <td><input type="hidden" name='id_unesa' value="<?php echo $row['no_ktp'] ?>"><?php echo $row['no_ktp']?></td>
-                            <td><input type="hidden" name='nama' value="<?php echo $row['nama'] ?>"><?php echo $row['nama'] ?></td>
-                            <td><input type="hidden" name='prodi' value="<?php echo $row['alamat'] ?>"><?php echo $row['alamat'] ?></td>
-                            <td><input type="hidden" name='status' value="<?php echo $row['email'] ?>"><?php echo $row['email'] ?></td>
-                            <td><input type="hidden" name='status' value="<?php echo $row['no_hp'] ?>"><?php echo $row['no_hp'] ?></td>
-                            <td></td>
+                            <td><input type="hidden" name='id_unesa' value="<?php echo $row[0] ?>"><?php echo $row[0]?></td>
+                            <td><input type="hidden" name='nama' value="<?php echo $row[1] ?>"><?php echo $row[1] ?></td>
+                            <td><input type="hidden" name='prodi' value="<?php echo $row[2] ?>"><?php echo $row[2] ?></td>
+                            <td><input type="hidden" name='status' value="<?php echo $row[3] ?>"><?php echo $row[3] ?></td>
                           </tr>
                         <?php }?>
                   </tr>

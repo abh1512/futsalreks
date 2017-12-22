@@ -23,6 +23,9 @@ if($row > 0)
       $isi = mysqli_fetch_array($query);
       $_SESSION['id_pengguna'] = ''.$isi[0];
     }
+    else {
+      $_SESSION['email'] = ''.$user;
+    }
   }
 }
 else{
