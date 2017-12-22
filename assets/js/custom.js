@@ -1,6 +1,28 @@
 $(document).ready(function(){
   $('.daftar').click(function(){
-    alert($(this).attr('id'));
+    var key = $(this).attr('id');
+    $.ajax({
+        url : "login.php",
+        type: "POST",
+        data: $("#form_penyewaan").serialize()+"&key="+key,
+        success: function(data){
+          alert(data);
+/*        if(data == "pegawai")
+          {
+            window.location.href = ""+data;
+          }
+          else {
+            swal({
+                title: "Gagal Masuk",
+                text: ""+data,
+                type: "warning",
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "OK",
+            });
+          }
+*/
+        }
+    });
   })
     /*
       $('#jam_lapangan').DataTable({

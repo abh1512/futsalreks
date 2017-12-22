@@ -6,7 +6,7 @@
       </div>
     <div class="card-content">
       <div class="row">
-        <form class="col s12" >
+        <form class="col s12" id="form_penyewaan">
           <div class="row">
             <div class="input-field col s12">
               <input placeholder="" id="first_name" name="nama" type="text" autocomplete="off" class="validate" readonly onfocus="this.removeAttribute('readonly');" >
@@ -33,7 +33,7 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input placeholder="" name="pass" type="text" autocomplete="off" class="validate" readonly onfocus="this.removeAttribute('readonly');" >
+              <input placeholder="" name="password" type="text" autocomplete="off" class="validate" readonly onfocus="this.removeAttribute('readonly');" >
               <label for="first_name">Password</label>
             </div>
           </div>
