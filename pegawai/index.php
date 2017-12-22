@@ -133,7 +133,7 @@ $row2 = mysqli_fetch_array(mysqli_query($con,"SELECT nama FROM gedungs WHERE id_
                     <li class="no-padding <?=$aktif['off_booking']?> "><a class="waves-effect waves-grey active" href="?halaman=off_booking"><i class="material-icons">assignment</i>Offline Booking</a></li>
                     <li class="no-padding <?=$aktif['transaksi']?>"><a class="waves-effect waves-grey active" href="?halaman=transaksi"><i class="material-icons">add_shopping_cart</i>Transaksi</a></li>
                     <li class="no-padding <?=$aktif['lapangan']?>"><a class="waves-effect waves-grey active" href="?halaman=lapangan"><i class="material-icons">settings_input_svideo</i>Lapangan</a></li>
-                    <li class="no-padding <?=$aktif['laporan']?>"><a class="waves-effect waves-grey active" href="?halaman=laporan"><i class="material-icons">insert_chart</i>Laporan</a></li>
+                    <!--li class="no-padding <!--?=$aktif['laporan']?>"><a class="waves-effect waves-grey active" href="?halaman=laporan"><i class="material-icons">insert_chart</i>Laporan</a></li-->
                 </ul>
                 </div>
             </aside>
