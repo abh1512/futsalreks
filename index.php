@@ -34,6 +34,8 @@ if(isset($_GET['halaman'])){
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="assets/plugins/metrojs/MetroJs.min.css" rel="stylesheet">
         <link href="assets/plugins/weather-icons-master/css/weather-icons.min.css" rel="stylesheet">
+        <link href="assets/plugins/google-code-prettify/prettify.css" rel="stylesheet" type="text/css"/>
+         <link href="assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css"/>
 
         <link href="assets/plugins/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 
@@ -51,7 +53,7 @@ if(isset($_GET['halaman'])){
         <![endif]-->
 
     </head>
-    <body class="grey lighten-5">
+    <body class="grey lighten-5" onload="emp();">
         <div class="loader-bg"></div>
         <div class="loader">
             <div class="preloader-wrapper big active">
@@ -97,11 +99,26 @@ if(isset($_GET['halaman'])){
         <div class="mn-content ">
           <div id="modal1" class="modal">
               <div class="modal-content">
-                  <h4>Modal Header</h4>
-                  <p>A bunch of text</p>
+                  <h4>Masuk</h4>
+                  <div class="row">
+                    <form class="col s12" id="form_login">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="email" type="email" name="email" class="validate">
+                          <label for="email" data-error="bukan email" data-success="">Email</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="password" type="password" name="password" class="validate">
+                          <label for="email">Email</label>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
               </div>
               <div class="modal-footer">
-                  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                  <a href="#!" class=" modal-action  waves-effect waves-green btn-flat" id="tombol_login">Masuk</a>
               </div>
           </div>
             <header class="mn-header" >
@@ -109,7 +126,7 @@ if(isset($_GET['halaman'])){
                     <div class="nav-wrapper row">
 
                         <div class="header-title col s3 m3">
-                            <span class="chapter-title">FutsalRek</span>
+                            <a href="./"><span class="chapter-title" >FutsalRek</span></a>
                         </div>
 
 												<form class="left search col s6 hide-on-small-and-down">
@@ -123,12 +140,12 @@ if(isset($_GET['halaman'])){
                         <ul class="right col s9 m3 nav-right-menu">
                             <li class="hide-on-large-only"><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown2"><i class="material-icons right">more_vert</i></a></li>
                             <li class="hide-on-med-and-down"><a class="waves-effect waves-light modal-trigger" href="#modal1">Masuk</a></li>
-                            <li class="hide-on-med-and-down"><a href="#!"  class="dropdown-right show-on-large" id="daftar">Daftar</a></li>
+                            <li class="hide-on-med-and-down"><a href="?pag=daftar"  class="dropdown-right show-on-large" id="daftar">Daftar</a></li>
                         </ul>
 
                         <ul id="dropdown1" class="dropdown-content notification-dropdown">
                           <li><a class="waves-effect waves-light modal-trigger" href="#modal1">Masuk</a></li>
-                          <li><a href="regis.php">Daftar</a></li>
+                          <li><a href="?pag=daftar">Daftar</a></li>
                         </ul>
 
                         <ul id="dropdown2" class="dropdown-content notifications-dropdown" >
@@ -192,10 +209,11 @@ if(isset($_GET['halaman'])){
         <script src="assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
         <script src="assets/plugins/jquery-blockui/jquery.blockui.js"></script>
         <script src="assets/plugins/datatables/js/jquery.dataTables.min.js"></script>
+        <script src="assets/plugins/google-code-prettify/prettify.js"></script>
+        <script src="assets/plugins/sweetalert/sweetalert.min.js"></script>
         <script src="assets/js/alpha.min.js"></script>
         <script src="assets/js/pages/ui-carousel.js"></script>
 				<script src="assets/js/pages/form_elements.js"></script>
-
         <script src="assets/js/custom.js"></script>
 
 

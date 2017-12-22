@@ -12,10 +12,13 @@
         <div class="col s12">
           <h5 class="center-align">Sebelum Batas Pembayaran</h5>
         </div>
+        <div class="col s12">
+          <h5 class="center-align" id="timer"></h5>
+        </div>
         <div class="col s12 ">
           <div class="card horizontal">
-            <div class="card-image" >
-              <img src="assets/images/bca.png" width="75px">
+            <div class="card-image" style="width:100px; margin-left: 150px;" >
+              <img src="assets/images/bca.png" style="margin-top: 22%;">
             </div>
             <div class="card-stacked">
               <div class="card-content">
@@ -26,15 +29,20 @@
             </div>
           </div>
         </div>
-        <div class="col s12">
-          <div class="card-panel ">
-          <ul>
-            <li>
-              <img src="assets/images/bca.png" width="75px"><span>7210275902</span>
-            </li>
-          </ul>
+        <div class="col s12 ">
+          <div class="card horizontal">
+            <div class="card-image" style="width:100px; margin-left: 150px;" >
+              <img src="assets/images/mandiri.png" style="margin-top: 5%;">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <p>7645361273</p>
+                <p>a.n Futsalrek.com</p>
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
+
         <div class="col s12">
 
         </div>
@@ -67,7 +75,7 @@
       </table>-->
     </div>
     <div class="card-action">
-      <a href="#!" class="waves-effect waves-light btn right-align booking cyan darken-2" id="pembayaran"><i class="large material-icons right">chevron_right</i> Lanjut & Bayar</a>
+      <a href="#!" class="waves-effect waves-light btn right-align booking cyan darken-2" id="pembayaran"><i class="large material-icons right">chevron_right</i> Konfirmasi Pembayaran</a>
     </div>
     </div>
   </div>
